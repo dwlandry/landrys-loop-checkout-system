@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Landrys_Loop_Checkout_System.Module</RootNamespace>
+    <AssemblyName>Landrys_Loop_Checkout_System.Module</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'EasyTest|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\EasyTest\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;EASYTEST</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Server Deploy|AnyCPU'">
+    <OutputPath>bin\Server Deploy\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.AuditTrail.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Chart.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.ConditionalAppearance.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Objects.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.ReportsV2.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Security.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Security.Xpo.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Validation.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.ViewVariantsModule.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Xpo.v15.2">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v15.2.Core">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Data.v15.2">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.v15.2">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.Base.v15.2">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.BaseImpl.v15.2">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v15.2">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v15.2.Extensions, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="ImportData, Version=1.0.5821.17060, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Documents\Samples\eXpressApp Framework\ImportData\bin\Debug\ImportData.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Xpand.ExpressApp, Version=15.2.4.3, Culture=neutral, PublicKeyToken=c52ffed5d5ff0958, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\eXpandFramework\Xpand.DLL\Xpand.ExpressApp.dll</HintPath>
+    </Reference>
+    <Reference Include="Xpand.ExpressApp.FileAttachment, Version=15.2.4.3, Culture=neutral, PublicKeyToken=c52ffed5d5ff0958, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\eXpandFramework\Xpand.DLL\Xpand.ExpressApp.FileAttachment.dll</HintPath>
+    </Reference>
+    <Reference Include="Xpand.ExpressApp.ImportWizard, Version=15.2.4.3, Culture=neutral, PublicKeyToken=c52ffed5d5ff0958, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\eXpandFramework\Xpand.DLL\Xpand.ExpressApp.ImportWizard.dll</HintPath>
+    </Reference>
+    <Reference Include="Xpand.ExpressApp.Security, Version=15.2.4.3, Culture=neutral, PublicKeyToken=c52ffed5d5ff0958, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\eXpandFramework\Xpand.DLL\Xpand.ExpressApp.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Xpand.ExpressApp.Security.Win, Version=15.2.4.3, Culture=neutral, PublicKeyToken=c52ffed5d5ff0958, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\eXpandFramework\Xpand.DLL\Xpand.ExpressApp.Security.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="Xpand.Persistent.Base, Version=15.2.4.3, Culture=neutral, PublicKeyToken=c52ffed5d5ff0958, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\eXpandFramework\Xpand.DLL\Xpand.Persistent.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Xpand.Xpo, Version=15.2.4.3, Culture=neutral, PublicKeyToken=c52ffed5d5ff0958, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\eXpandFramework\Xpand.DLL\Xpand.Xpo.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessObjects\Contact.cs" />
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\Area.cs" />
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\Area.Designer.cs">
+      <DependentUpon>Area.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\Company.cs" />
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\Company.Designer.cs">
+      <DependentUpon>Company.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\ConnectionHelper.cs" />
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\ControlSystem.cs" />
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\ControlSystem.Designer.cs">
+      <DependentUpon>ControlSystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\ControlSystemType.cs" />
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\ControlSystemType.Designer.cs">
+      <DependentUpon>ControlSystemType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\DailySchedule.cs" />
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\DailySchedule.Designer.cs">
+      <DependentUpon>DailySchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\Drawing.cs" />
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\Drawing.Designer.cs">
+      <DependentUpon>Drawing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\Instrument.cs" />
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\Instrument.Designer.cs">
+      <DependentUpon>Instrument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\InstrumentType.cs" />
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\InstrumentType.Designer.cs">
+      <DependentUpon>InstrumentType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\IOType.cs" />
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\IOType.Designer.cs">
+      <DependentUpon>IOType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\Job.cs" />
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\Job.Designer.cs">
+      <DependentUpon>Job.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\JunctionBox.cs" />
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\JunctionBox.Designer.cs">
+      <DependentUpon>JunctionBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\LocationPlan.cs" />
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\LocationPlan.Designer.cs">
+      <DependentUpon>LocationPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\Loop.cs" />
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\Loop.Designer.cs">
+      <DependentUpon>Loop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\LoopCheckStatus.cs" />
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\LoopCheckStatus.Designer.cs">
+      <DependentUpon>LoopCheckStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\LoopDrawing.cs" />
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\LoopDrawing.Designer.cs">
+      <DependentUpon>LoopDrawing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\Note.cs" />
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\Note.Designer.cs">
+      <DependentUpon>Note.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\PID.cs" />
+    <Compile Include="BusinessObjects\LandrysLoopCheckoutSystemDataModelCode\PID.Designer.cs">
+      <DependentUpon>PID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\LoopCheck.cs" />
+    <Compile Include="BusinessObjects\LoopCheckEvent.cs" />
+    <Compile Include="BusinessObjects\LoopItem.cs" />
+    <Compile Include="ChangeDatabaseLogonParameters.cs" />
+    <Compile Include="Controllers\LoopViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\LoopViewController.Designer.cs">
+      <DependentUpon>LoopViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseUpdate\Updater.cs" />
+    <Compile Include="Module.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Module.Designer.cs">
+      <DependentUpon>Module.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\IOCheckStatusReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IOCheckStatusReport.Designer.cs">
+      <DependentUpon>IOCheckStatusReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\LoopCheckStatusReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LoopCheckStatusReport.Designer.cs">
+      <DependentUpon>LoopCheckStatusReport.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controllers\LoopViewController.resx">
+      <DependentUpon>LoopViewController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model.DesignedDiffs.xafml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Module.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Reports\IOCheckStatusReport.resx">
+      <DependentUpon>IOCheckStatusReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LoopCheckStatusReport.resx">
+      <DependentUpon>LoopCheckStatusReport.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BusinessObjects\LandrysLoopCheckoutSystemDataModel.xpo" />
+    <None Include="BusinessObjects\LandrysLoopCheckoutSystemDataModel.xpo.diagram">
+      <DependentUpon>LandrysLoopCheckoutSystemDataModel.xpo</DependentUpon>
+    </None>
+    <None Include="DatabaseUpdate\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BusinessObjects\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Controllers\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FunctionalTests\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FunctionalTests\sample.ets" />
+    <None Include="Images\ReadMe.txt" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FunctionalTests\config.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Project.png" />
+    <EmbeddedResource Include="Images\Project_32x32.png" />
+    <EmbeddedResource Include="Images\LoopCheck.png" />
+    <EmbeddedResource Include="Images\LoopCheck_32x32.png" />
+    <EmbeddedResource Include="Images\LoopCheckV2.png" />
+    <EmbeddedResource Include="Images\LoopCheckV2_32x32.png" />
+    <EmbeddedResource Include="Images\import.png" />
+    <EmbeddedResource Include="Images\import_32x32.png" />
+    <None Include="UnusableNodes.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <EmbeddedResource Include="Images\box.png" />
+    <EmbeddedResource Include="Images\box_32x32.png" />
+    <EmbeddedResource Include="Images\computer.png" />
+    <EmbeddedResource Include="Images\computer_32x32.png" />
+    <EmbeddedResource Include="Images\gauge.png" />
+    <EmbeddedResource Include="Images\gauge_32x32.png" />
+    <EmbeddedResource Include="Images\Drawing.png" />
+    <EmbeddedResource Include="Images\Drawing_32x32.png" />
+    <None Include="UnusableNodes1.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes2.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes3.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Welcome.html" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

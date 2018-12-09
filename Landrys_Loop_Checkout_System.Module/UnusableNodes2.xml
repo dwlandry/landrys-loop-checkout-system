@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <ListView Id="Loop_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="LoopCheckStatus" OwnerBand="Check Status" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

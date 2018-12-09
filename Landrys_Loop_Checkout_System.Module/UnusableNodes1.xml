@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <ListView Id="Loop_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="LoopProvider" OwnerBand="LoopData" />
+        <ColumnInfo Id="LoopFolderReceived" OwnerBand="LoopData" />
+        <ColumnInfo Id="TargetLoopCheckDate" OwnerBand="LoopData" />
+        <ColumnInfo Id="Description" OwnerBand="LoopData" />
+        <ColumnInfo Id="LoopNumber" OwnerBand="LoopNumber" />
+        <ColumnInfo Id="ResponsibleCompany" OwnerBand="InstrumentData" />
+        <ColumnInfo Id="InstrumentTags" OwnerBand="InstrumentData" />
+        <ColumnInfo Id="AreaList" OwnerBand="LoopData" />
+        <ColumnInfo Id="LoopDrawings" OwnerBand="Drawings" />
+        <ColumnInfo Id="LocationPlans" OwnerBand="Drawings" />
+        <ColumnInfo Id="JunctionBoxes" OwnerBand="InstrumentData" />
+        <ColumnInfo Id="PIDs" OwnerBand="Drawings" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

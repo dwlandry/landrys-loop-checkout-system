@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="Landrys Loop Checkout System" Logo="LoopCheckV2_32x32">
+  <ActionDesign>
+    <Actions>
+      <Action Id="SetLoopCheckStatusAction" Shortcut="Control+Shift+S" />
+    </Actions>
+  </ActionDesign>
+  <CreatableItems>
+    <CreatableItem ClassName="Landrys_Loop_Checkout_System.Module.BusinessObjects.Contact" Removed="True" />
+    <CreatableItem ClassName="Landrys_Loop_Checkout_System.Module.BusinessObjects.Db151516LoopCheckout.Company" Removed="True" />
+    <CreatableItem ClassName="Landrys_Loop_Checkout_System.Module.BusinessObjects.Db151516LoopCheckout.DailySchedule" Removed="True" />
+    <CreatableItem ClassName="Landrys_Loop_Checkout_System.Module.BusinessObjects.Db151516LoopCheckout.JobInfo" Removed="True" />
+    <CreatableItem ClassName="Landrys_Loop_Checkout_System.Module.BusinessObjects.Db151516LoopCheckout.LocationPlan" Removed="True" />
+    <CreatableItem ClassName="Landrys_Loop_Checkout_System.Module.BusinessObjects.Db151516LoopCheckout.Loop" Removed="True" />
+    <CreatableItem ClassName="Landrys_Loop_Checkout_System.Module.BusinessObjects.Db151516LoopCheckout.LoopDrawing" Removed="True" />
+    <CreatableItem ClassName="Landrys_Loop_Checkout_System.Module.BusinessObjects.Db151516LoopCheckout.PID" Removed="True" />
+  </CreatableItems>
+  <NavigationItems StartupNavigationItem="Loop_ListView">
+    <Items>
+      <Item Id="Data" Index="0" Shortcut="l" ChildItemsDisplayStyle="List" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="Job Info/Party" Index="0" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="JobInfo_ListView" ObjectKey="" Index="1" ViewId="JobInfo_DetailView" IsNewNode="True" />
+              <Item Id="Company_ListView" ViewId="Company_ListView" ObjectKey="" Index="3" Caption="Companies" IsNewNode="True" />
+              <Item Id="Contact_ListView" ViewId="Contact_ListView" ObjectKey="" Index="4" Caption="Contacts" IsNewNode="True" />
+            </Items>
+          </Item>
+          <Item Id="Loop Data" Index="1" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="Loop_ListView" ObjectKey="" Index="0" Caption="Loops" ViewId="Loop_ListView_Varied" IsNewNode="True" />
+              <Item Id="Instrument_ListView" ViewId="Instrument_ListView" ObjectKey="" Index="1" IsNewNode="True" />
+              <Item Id="ControlSystem_ListView" ViewId="ControlSystem_ListView" ObjectKey="" Index="2" IsNewNode="True" />
+              <Item Id="ControlSystemType_ListView" ViewId="ControlSystemType_ListView" ObjectKey="" Index="3" IsNewNode="True" />
+              <Item Id="IOType_ListView" ViewId="IOType_ListView" ObjectKey="" Index="4" IsNewNode="True" />
+              <Item Id="Area_ListView" ViewId="Area_ListView" ObjectKey="" Caption="Areas" IsNewNode="True" />
+              <Item Id="LoopCheckStatus_ListView" ViewId="LoopCheckStatus_ListView" ObjectKey="" ImageName="BO_List" IsNewNode="True" />
+            </Items>
+          </Item>
+          <Item Id="Drawings" ChildItemsDisplayStyle="List" ViewId="" ImageName="BO_Folder" Caption="Drawings &amp; Equipment" Index="2" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="JunctionBox_ListView" ViewId="JunctionBox_ListView" ObjectKey="" Caption="Junction Boxes" ImageName="box" IsNewNode="True" />
+              <Item Id="LocationPlan_ListView" ViewId="LocationPlan_ListView" ObjectKey="" ImageName="Drawing" Caption="Location Plans" IsNewNode="True" />
+              <Item Id="LoopDrawing_ListView" ViewId="LoopDrawing_ListView" ObjectKey="" ImageName="Drawing" Caption="Loop Drawings" IsNewNode="True" />
+              <Item Id="PID_ListView" ViewId="PID_ListView" ObjectKey="" ImageName="Drawing" ChildItemsDisplayStyle="LargeIcons" Caption="PIDs" IsNewNode="True" />
+            </Items>
+          </Item>
+          <Item Id="Calendar/Schedule" ImageName="BO_Folder" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="@d7f65624-de1f-4d7a-8fd3-65970260dd0d" ViewId="LoopCheck_ListView_Calendar" IsNewNode="True" />
+            </Items>
+          </Item>
+        </Items>
+      </Item>
+      <Item Id="Reports" Index="1" Shortcut="r">
+        <Items>
+          <Item Id="Loop Status Report" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="KPI" Index="2" Shortcut="k" />
+      <Item Id="Default" Caption="Users" Index="3" Shortcut="u">
+        <Items>
+          <Item Id="Area_ListView" Removed="True" />
+          <Item Id="Company_ListView" Removed="True" />
+          <Item Id="Contact_ListView" Removed="True" />
+          <Item Id="ControlSystem_ListView" Removed="True" />
+          <Item Id="ControlSystemType_ListView" Removed="True" />
+          <Item Id="DailySchedule_ListView" Removed="True" />
+          <Item Id="Instrument_ListView" Removed="True" />
+          <Item Id="IOType_ListView" Removed="True" />
+          <Item Id="JobInfo_ListView" Removed="True" />
+          <Item Id="JunctionBox_ListView" Removed="True" />
+          <Item Id="LocationPlan_ListView" Removed="True" />
+          <Item Id="Loop_ListView" Removed="True" />
+          <Item Id="LoopCheckStatus_ListView" Removed="True" />
+          <Item Id="LoopDrawing_ListView" Removed="True" />
+          <Item Id="PID_ListView" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="Dashboard" ImageName="Navigation_Item_Dashboard" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="@dfe940de-c62f-4254-acc0-42e0b15ba5c9" ViewId="Example Dashboard View" IsNewNode="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="ImportWizardModule" Version="15.2.4.3" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="15.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="15.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="XpandFileAttachmentsModule" Version="15.2.4.3" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <DetailView Id="Contact_DetailView">
+      <Items>
+        <PropertyEditor Id="Address1" Removed="True" />
+        <PropertyEditor Id="Address2" Removed="True" />
+        <PropertyEditor Id="Birthday" Removed="True" />
+        <PropertyEditor Id="Photo" Removed="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Person">
+              <LayoutGroup Id="Person_col1">
+                <LayoutItem Id="LastName" Index="1" />
+                <LayoutGroup Id="Contact" Index="2" ShowCaption="False" IsNewNode="True">
+                  <LayoutItem Id="Title" ViewItem="Title" Index="0" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="Company" IsNewNode="True" />
+                <LayoutItem Id="MiddleName" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Person_col2">
+                <LayoutItem Id="Birthday" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="Party">
+              <LayoutItem Id="Address1" Removed="True" />
+              <LayoutItem Id="Address2" Removed="True" />
+              <LayoutItem Id="Photo" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Contact" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Contact_ListView">
+      <Columns>
+        <ColumnInfo Id="Address1" Removed="True" />
+        <ColumnInfo Id="Address2" Removed="True" />
+        <ColumnInfo Id="Birthday" Removed="True" />
+        <ColumnInfo Id="Photo" Removed="True" />
+      </Columns>
+    </ListView>
+    <DetailView Id="JobInfo_DetailView" AllowDelete="False" AllowNew="False" />
+    <ListView Id="JunctionBox_ListView" MasterDetailMode="ListViewAndDetailView" />
+    <ListView Id="LocationPlan_ListView" MasterDetailMode="ListViewAndDetailView" />
+    <DetailView Id="Loop_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Loop">
+              <LayoutGroup Id="Loop_col2" Index="0" />
+              <LayoutGroup Id="Loop_col1" Index="1" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" Direction="Horizontal">
+            <LayoutGroup Id="Notes" Index="0" />
+            <LayoutGroup Id="Instruments" Index="1" />
+            <LayoutGroup Id="AuditTrail" Index="4" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Loop_ListView" AllowEdit="True" MasterDetailMode="ListViewOnly" IsFooterVisible="True">
+      <Columns>
+        <ColumnInfo Id="LoopNumber" OwnerBand="" />
+        <ColumnInfo Id="Description" Index="1" OwnerBand="" />
+        <ColumnInfo Id="LoopCheckStatus" Index="2" OwnerBand="" />
+        <ColumnInfo Id="TargetLoopCheckDate" Index="3" OwnerBand="" />
+        <ColumnInfo Id="InstrumentTags" Index="4" OwnerBand="" />
+        <ColumnInfo Id="LoopProvider" Index="5" OwnerBand="" />
+        <ColumnInfo Id="PIDs" Index="6" OwnerBand="" />
+        <ColumnInfo Id="LocationPlans" Index="7" OwnerBand="" />
+        <ColumnInfo Id="LoopDrawings" Index="8" OwnerBand="" />
+        <ColumnInfo Id="JunctionBoxes" Index="9" OwnerBand="" />
+        <ColumnInfo Id="AreaList" Index="10" OwnerBand="" />
+        <ColumnInfo Id="ResponsibleCompany" Index="11" OwnerBand="" />
+        <ColumnInfo Id="LoopFolderReceived" Index="12" OwnerBand="" />
+      </Columns>
+      <BandsLayout Enable="False" />
+      <SplitLayout Direction="Vertical" ViewsOrder="DetailViewListView" />
+    </ListView>
+    <ListView Id="Loop_ListView_BandedColumns" ClassName="Landrys_Loop_Checkout_System.Module.BusinessObjects.Db151516LoopCheckout.Loop" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Oid" PropertyName="Oid" Index="-1" Width="50" IsNewNode="True" />
+        <ColumnInfo Id="LoopNumber" PropertyName="LoopNumber" Index="0" Width="400" SortIndex="0" SortOrder="Ascending" OwnerBand="Loop Number" IsNewNode="True" />
+        <ColumnInfo Id="PIDs" PropertyName="PIDs" Index="1" Width="70" OwnerBand="Drawings" IsNewNode="True" />
+        <ColumnInfo Id="JunctionBoxes" PropertyName="JunctionBoxes" Index="2" Width="70" OwnerBand="Instrument Data" IsNewNode="True" />
+        <ColumnInfo Id="LocationPlans" PropertyName="LocationPlans" Index="3" Width="70" OwnerBand="Drawings" IsNewNode="True" />
+        <ColumnInfo Id="LoopDrawings" PropertyName="LoopDrawings" Index="4" Width="70" OwnerBand="Drawings" IsNewNode="True" />
+        <ColumnInfo Id="AreaList" PropertyName="AreaList" Index="5" Width="70" OwnerBand="Loop Data" IsNewNode="True" />
+        <ColumnInfo Id="InstrumentTags" PropertyName="InstrumentTags" Index="6" Width="70" OwnerBand="Instrument Data" IsNewNode="True" />
+        <ColumnInfo Id="ResponsibleCompany" PropertyName="ResponsibleCompany" Index="7" Width="70" OwnerBand="Instrument Data" IsNewNode="True" />
+        <ColumnInfo Id="Description" PropertyName="Description" Index="8" Width="70" OwnerBand="Loop Data" IsNewNode="True" />
+        <ColumnInfo Id="LoopCheckStatus" PropertyName="LoopCheckStatus" Index="9" Width="70" OwnerBand="Check Status" IsNewNode="True" />
+        <ColumnInfo Id="TargetLoopCheckDate" PropertyName="TargetLoopCheckDate" Index="10" Width="70" OwnerBand="Loop Data" IsNewNode="True" />
+        <ColumnInfo Id="LoopFolderReceived" PropertyName="LoopFolderReceived" Index="11" Width="50" OwnerBand="Loop Data" IsNewNode="True" />
+        <ColumnInfo Id="LoopProvider" PropertyName="LoopProvider" Index="12" Width="70" OwnerBand="Loop Data" IsNewNode="True" />
+      </Columns>
+      <BandsLayout Enable="True" IsNewNode="True">
+        <Band Id="Loop Number" Index="0" IsNewNode="True" />
+        <Band Id="Check Status" Index="1" IsNewNode="True" />
+        <Band Id="Drawings" Index="2" IsNewNode="True" />
+        <Band Id="Instrument Data" Index="3" IsNewNode="True" />
+        <Band Id="Loop Data" IsNewNode="True" />
+      </BandsLayout>
+    </ListView>
+    <ListView Id="Loop_ListView_Varied" ClassName="Landrys_Loop_Checkout_System.Module.BusinessObjects.Db151516LoopCheckout.Loop" IsNewNode="True">
+      <Variants IsNewNode="True">
+        <Variant Id="All Columns" ViewID="Loop_ListView" Caption="All Columns" IsNewNode="True" />
+        <Variant Id="Banded Columns" ViewID="Loop_ListView_BandedColumns" Caption="Grouped Columns" IsNewNode="True" />
+        <Variant Id="List with Details" Caption="List with Details" ViewID="Loop_ListView_WithDetails" IsNewNode="True" />
+      </Variants>
+    </ListView>
+    <ListView Id="Loop_ListView_WithDetails" ClassName="Landrys_Loop_Checkout_System.Module.BusinessObjects.Db151516LoopCheckout.Loop" MasterDetailMode="ListViewAndDetailView" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="LoopNumber" PropertyName="LoopNumber" Index="0" Width="113" SortIndex="0" SortOrder="Ascending" IsNewNode="True" />
+        <ColumnInfo Id="LoopCheckStatus" PropertyName="LoopCheckStatus" Index="1" Width="178" IsNewNode="True" />
+        <ColumnInfo Id="NoteList" PropertyName="NoteList" Index="2" Width="206" IsNewNode="True" />
+      </Columns>
+      <ChartSettings Settings="﻿&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#xD;&#xA;&lt;ChartXmlSerializer version=&quot;15.2.4.0&quot;&gt;&#xD;&#xA;  &lt;Chart AppearanceNameSerializable=&quot;Default&quot; SelectionMode=&quot;None&quot; SeriesSelectionMode=&quot;Series&quot;&gt;&#xD;&#xA;    &lt;DataContainer RefreshDataOnRepaint=&quot;true&quot; BoundSeriesSorting=&quot;None&quot; DataMember=&quot;&quot;&gt;&#xD;&#xA;      &lt;SeriesTemplate /&gt;&#xD;&#xA;      &lt;SeriesSerializable&gt;&#xD;&#xA;        &lt;Item1 Name=&quot;Series 1&quot; ArgumentDataMember=&quot;LoopCheckStatus.Description&quot; ColorDataMember=&quot;LoopCheckStatus.Description&quot; ToolTipHintDataMember=&quot;LoopCheckStatus.Description&quot; SummaryFunction=&quot;COUNT()&quot;&gt;&#xD;&#xA;          &lt;View TypeNameSerializable=&quot;PieSeriesView&quot; SweepDirection=&quot;Counterclockwise&quot; /&gt;&#xD;&#xA;        &lt;/Item1&gt;&#xD;&#xA;      &lt;/SeriesSerializable&gt;&#xD;&#xA;    &lt;/DataContainer&gt;&#xD;&#xA;  &lt;/Chart&gt;&#xD;&#xA;&lt;/ChartXmlSerializer&gt;" IsNewNode="True" />
+      <SplitLayout SplitterPosition="450" IsNewNode="True" />
+    </ListView>
+    <ListView Id="Loop_Notes_ListView">
+      <Columns>
+        <ColumnInfo Id="Text" Index="0" Width="354" />
+        <ColumnInfo Id="AddedBy" AllowEdit="False" Index="1" Width="94" />
+        <ColumnInfo Id="DateAdded" Width="80" AllowEdit="False" Index="2" />
+      </Columns>
+    </ListView>
+    <ListView Id="LoopDrawing_ListView" MasterDetailMode="ListViewAndDetailView" />
+    <DetailView Id="Note_DetailView">
+      <Items>
+        <PropertyEditor Id="AddedBy" AllowEdit="False" />
+        <PropertyEditor Id="DateAdded" AllowEdit="False" />
+      </Items>
+    </DetailView>
+    <ListView Id="Note_ListView">
+      <Columns>
+        <ColumnInfo Id="Text" Index="0" Width="354" />
+        <ColumnInfo Id="AddedBy" AllowEdit="False" Index="1" />
+        <ColumnInfo Id="DateAdded" AllowEdit="False" Index="2" Width="90" />
+      </Columns>
+    </ListView>
+    <ListView Id="Note_LookupListView">
+      <Columns>
+        <ColumnInfo Id="AddedBy" AllowEdit="False" />
+        <ColumnInfo Id="DateAdded" AllowEdit="False" />
+      </Columns>
+    </ListView>
+    <ListView Id="PID_ListView" MasterDetailMode="ListViewAndDetailView" />
+  </Views>
+</Application>

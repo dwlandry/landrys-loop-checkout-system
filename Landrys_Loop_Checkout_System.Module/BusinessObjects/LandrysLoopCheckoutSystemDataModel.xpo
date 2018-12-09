@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="70376952-d3be-45ee-8dbc-207cc2d8d5fe" dbName="Db151516LoopCheckout" connectionInfo="77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxEZXZFeHByZXNzWHBvR2VuZXJhdG9yU2V0dGluZ3MgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeG1sbnM6eHNkPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgcHJvdmlkZXJLZXk9Ik1TU3FsU2VydmVyQ0UiPg0KICA8cGFyYW1ldGVyPg0KICAgIDxDb25uZWN0aW9uUGFnZVNldHRpbmdzSXRlbSBuYW1lPSJkYXRhYmFzZSIgdmFsdWU9IkM6XFVzZXJzXGRsYW5kcnlcT25lRHJpdmVcVmlzdWFsIFN0dWRpbyAyMDE1XFByb2plY3RzXExhbmRyeXMgTG9vcCBDaGVja291dCBTeXN0ZW1cRGF0YWZpbGVcMTUtMTUxNl9Mb29wQ2hlY2tvdXQubGxjcyIgLz4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0icGFzc3dvcmQiIHZhbHVlPSIiIC8+DQogICAgPENvbm5lY3Rpb25QYWdlU2V0dGluZ3NJdGVtIG5hbWU9InJlYWQgb25seSIgdmFsdWU9IjEiIC8+DQogICAgPENvbm5lY3Rpb25QYWdlU2V0dGluZ3NJdGVtIG5hbWU9ImdlbmVyYXRlQ29ubmVjdGlvbkhlbHBlciIgdmFsdWU9InRydWUiIC8+DQogIDwvcGFyYW1ldGVyPg0KPC9EZXZFeHByZXNzWHBvR2VuZXJhdG9yU2V0dGluZ3M+" namespace="Landrys_Loop_Checkout_System.Module.BusinessObjects.Db151516LoopCheckout" connectionString="XpoProvider=MSSqlServerCE;data source=C:\Users\dlandry\OneDrive\Visual Studio 2015\Projects\Landrys Loop Checkout System\Datafile\15-1516_LoopCheckout.llcs;password=" dataBaseShemaInfo="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" generateConnectionHelper="true" generateStoredProcedures="false" fieldNameCase="Unchanged" generateDefaultConstructors="false" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
+  <classes>
+    <dataBaseObjectModelHasClasses Id="dcbb0fb0-58ad-4441-adab-874673f8667d">
+      <xpObject Id="8ed9b06f-c1d9-4487-a711-def73039339c" name="JobInfo" baseClass="XPObject" userFileName="Job" designerFileName="Job.Designer" className="JobInfo" virtualName="JobInfo">
+        <fields>
+          <generalXpObjectHasFields Id="2346f9b6-46af-4dc9-b250-9fb1deb3f135">
+            <field Id="f9c22cc1-77bb-4b83-9ddb-68b0befcbf80" name="Number" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="53868e8f-a32d-48cf-8378-1d675bd5ee7a">
+            <field Id="715f8509-4171-4202-b05c-c73d0284a499" name="Description" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="afe84bec-61ad-4830-b88c-ee7f0451a1e7">
+            <field Id="1d32935c-e634-412a-b588-2254a516b114" name="ClientName" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="cecc2315-f715-4e9c-9d2b-8a8323091346">
+            <field Id="4df42db1-c2ba-409f-8d35-1d4d2c2a1fbc" name="ClientJobNumber" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="4eddc731-26cf-4e07-931d-02ca05644f21">
+      <xpObject Id="4f9a3ea4-c94f-40c6-92a8-388c69865a23" name="Loop" baseClass="XPObject" userFileName="Loop" designerFileName="Loop.Designer" className="Loop" virtualName="Loop">
+        <fields>
+          <generalXpObjectHasFields Id="cc9c7c82-d1ae-4b5c-9b25-c24dd21d02a7">
+            <field Id="dac041e2-1081-4fda-b06f-2628b6b6a8a0" name="LoopNumber" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="21c10614-2909-4f98-8082-4845101454c5">
+            <field Id="df6d5891-857b-4469-97fa-307c460791b1" name="Description" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="f680323d-9b7e-4945-826a-3201addbf93a">
+            <field Id="56167d9a-7c60-461b-8252-d1403779c801" name="LoopCheckStatus" virtualColumnType="LoopCheckStatus" logicalType="LoopCheckStatus" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="83ea5b93-ca2f-4311-b5f0-fd672f819f27">
+            <field Id="82dea959-f70d-4bdb-b483-79f353b0647a" name="TargetLoopCheckDate" columnType="DateTime" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="2ca531d5-ac56-4afe-a55e-411a94d1eb09">
+            <field Id="5a265181-3355-4fe0-a1e2-7289631d77c4" name="LoopFolderReceived" columnType="Boolean" virtualColumnType="Boolean" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="00654734-bf5d-45ee-81f1-13cc3d1b6207">
+            <field Id="e35833af-48e3-418d-b052-b857d296cc5f" name="LoopProvider" displayName="Company Providing Loop" virtualColumnType="Company" logicalType="Company" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="4ff84257-e81b-49ae-bcd0-0194ecc4f870" sourceCollectionName="DailySchedules" name="DailyScheduleReferencesLoop" targetFieldName="ScheduledLoop">
+            <xpObjectMoniker Id="682ad9fc-6cb1-47d3-9523-af300bb85b46" />
+          </simpleAssociation>
+          <simpleAssociation Id="e320af59-dae6-4f17-89e3-b87adc6a4e44" sourceCollectionName="Instruments" name="InstrumentReferencesLoop" targetFieldName="Loop">
+            <xpObjectMoniker Id="b60c0ee1-fa05-49db-97bc-073027e749a5" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="8c16e65e-32b4-4283-ae79-aedf84da45d6">
+            <collectionField Id="a696aeb7-89f8-4c17-b40d-a4c4bd11d4b0" name="Notes" />
+          </xpObjectHasCollectionFields>
+          <xpObjectHasCollectionFields Id="e7134368-3a64-4476-83a6-19e75ccd6427">
+            <collectionField Id="bc548a3b-c467-4bbc-9d4c-c833fbb7ffac" name="DailySchedules" />
+          </xpObjectHasCollectionFields>
+          <xpObjectHasCollectionFields Id="3c5132e8-2e61-46e1-bbda-2ef042d9ffc3">
+            <collectionField Id="e97c2551-7e25-4215-b440-9eb442a39625" name="Instruments" />
+          </xpObjectHasCollectionFields>
+          <xpObjectHasCollectionFields Id="29f12d34-b249-4605-b1ef-3bd67d174744">
+            <collectionField Id="4c0c9f9a-fb0f-4af4-9ac0-5c0c621105e8" name="Areas" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="ac243d17-2896-4569-80a0-2142de60acb8">
+      <xpObject Id="a0874570-9e58-4d4e-a7d9-0ff1a12fc6b0" name="PID" baseClass="Drawing" userFileName="PID" designerFileName="PID.Designer" className="PID" virtualBaseClass="Drawing" virtualName="PID">
+        <superClass>
+          <inheritance Id="a0a9e398-d9c9-4861-907a-029d026d2788">
+            <xpObjectMoniker Id="3909b2d4-b8c3-4d2d-99be-4eb9eed9673c" />
+          </inheritance>
+        </superClass>
+        <saTargets>
+          <simpleAssociation Id="7d77ac23-1294-4037-bfcc-e800b312d03f" sourceCollectionName="Instruments" name="InstrumentReferencesPID" targetFieldName="PID">
+            <xpObjectMoniker Id="b60c0ee1-fa05-49db-97bc-073027e749a5" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="fd5c967c-08f5-4063-b77b-9afcb986e3bb">
+            <collectionField Id="c3efec5e-ade3-46fd-b872-15d3d8e70a4b" name="Instruments" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="902b4dcc-af11-4bc1-a740-25e2b593aa72">
+      <xpObject Id="c531068b-d7eb-4c5b-85a0-0a722ffaf783" name="JunctionBox" baseClass="XPObject" userFileName="JunctionBox" designerFileName="JunctionBox.Designer" className="JunctionBox" virtualName="JunctionBox">
+        <fields>
+          <generalXpObjectHasFields Id="66626bc6-295c-49f1-ae43-c6b5c5e9be95">
+            <field Id="09b70d59-0880-4d60-a2bb-eee85ae87d5d" name="Number" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="95e39e77-4c1b-4023-b7b8-71481d6ae434" sourceCollectionName="Instruments" name="InstrumentReferencesJunctionBox" targetFieldName="JunctionBox">
+            <xpObjectMoniker Id="b60c0ee1-fa05-49db-97bc-073027e749a5" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="928f38dc-f144-48b6-9f0d-b90bcf9c0642">
+            <collectionField Id="450785af-c1ab-44ab-ab43-bd77d074a289" name="Instruments" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="68a4e035-a949-4e86-bd04-85a800249ec4">
+      <xpObject Id="898d3bc2-a84b-4e8a-9f8d-86949458c55a" name="LoopCheckStatus" baseClass="XPObject" userFileName="LoopCheckStatus" designerFileName="LoopCheckStatus.Designer" className="LoopCheckStatus" virtualName="LoopCheckStatus">
+        <fields>
+          <generalXpObjectHasFields Id="319ad4a9-a3b1-4d2f-9877-7b4127ced7b0">
+            <field Id="5004d68c-6a1a-4a30-8a1a-1061bdb84588" name="Description" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="42d4f738-9b46-4cdb-bfb1-1ca5d7c5b58e">
+            <field Id="8450934a-e1f7-4b25-9f44-c3dd3f98c30e" name="SortOrder" columnType="Int16" virtualColumnType="Int16" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="10e5f004-d12b-46d9-91d0-cb68fbbe8dfb">
+            <persistentAlias Id="72cdac40-eb77-4816-98e2-06f744a351b9" name="DisplayStatus" virtualColumnType="String" expression="[SortOrder] + '. ' + [Description]" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="58f4eaae-ad70-4f45-939f-0eacf8cc13ea" sourceCollectionName="Loops" name="LoopReferencesLoopCheckStatus" targetFieldName="LoopCheckStatus">
+            <xpObjectMoniker Id="4f9a3ea4-c94f-40c6-92a8-388c69865a23" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="0d0e70e4-8645-4959-94a3-390d97e82eae">
+            <collectionField Id="67257bb2-d25a-4b2f-bce6-7668619bf189" name="Loops" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="f9068c53-906f-4f7e-ab99-98712de59405">
+      <xpObject Id="1b9a592a-b4c5-4dd1-b131-7952413b371c" name="Note" baseClass="XPObject" userFileName="Note" designerFileName="Note.Designer" className="Note" virtualName="Note">
+        <fields>
+          <generalXpObjectHasFields Id="a575a3a6-661a-4b04-9833-0a3f85fac3c6">
+            <field Id="c2500068-e8b1-449d-b4f4-e05b5ee10be2" name="Text" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="200" />
+          </generalXpObjectHasFields>
+        </fields>
+        <mMTarget>
+          <manyToManyRelationship Id="2629ae24-974c-4abc-934a-d97d4174c420" sourceCollectionName="Loops" name="LoopReferencesNote" targetCollectionName="Notes">
+            <xpObjectMoniker Id="4f9a3ea4-c94f-40c6-92a8-388c69865a23" />
+          </manyToManyRelationship>
+        </mMTarget>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="f476fc6d-ef55-437b-b2a4-e5f6af149e4f">
+            <collectionField Id="f0694a87-0d63-49dd-ae8b-adb409f647f4" name="Loops" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="dadee7be-d5f9-4b93-82bf-3672df41171e">
+      <xpObject Id="682ad9fc-6cb1-47d3-9523-af300bb85b46" name="DailySchedule" baseClass="XPObject" userFileName="DailySchedule" designerFileName="DailySchedule.Designer" className="DailySchedule" virtualName="DailySchedule">
+        <fields>
+          <generalXpObjectHasFields Id="7c6b9745-6635-4911-b95c-0053ff9d6059">
+            <field Id="9be0ec79-363b-496b-9c22-aeaa3f49f856" name="Date" columnType="DateTime" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="8bfcd8b9-88a3-42e0-b73d-545592f4b170">
+            <field Id="b42b9749-aaa3-4e88-8f45-53c1ac7f3e0e" name="ScheduledLoop" virtualColumnType="Loop" logicalType="Loop" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="7bf57a97-aea8-42fc-a170-da4403d53fd2">
+      <xpObject Id="ffe31e78-004b-4253-a80a-b3483d316c4d" name="Company" baseClass="XPObject" userFileName="Company" designerFileName="Company.Designer" className="Company" virtualName="Company">
+        <fields>
+          <generalXpObjectHasFields Id="39c7a947-622a-4deb-b840-c5549be45e0a">
+            <field Id="d0997c57-345c-40bc-8a38-d2d6c6c6b0bc" name="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="bb9fbcc5-de9e-446f-8db1-b83e47d440d6" sourceCollectionName="Loops" name="LoopReferencesCompany" targetFieldName="LoopProvider">
+            <xpObjectMoniker Id="4f9a3ea4-c94f-40c6-92a8-388c69865a23" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="45d9d273-18f5-4429-8d6a-223bc18fd9af">
+            <collectionField Id="a759c7f5-50df-410c-8540-f14c7adca411" name="Loops" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="2217fea7-5b98-4ae9-bf0f-70970fe37939">
+      <xpObject Id="3909b2d4-b8c3-4d2d-99be-4eb9eed9673c" name="Drawing" baseClass="XPObject" userFileName="Drawing" designerFileName="Drawing.Designer" className="Drawing" virtualName="Drawing">
+        <fields>
+          <generalXpObjectHasFields Id="bf727077-a3a9-4685-9dc5-0818b0689c1d">
+            <field Id="cc8aeb20-990a-4784-87eb-299a448d746f" name="Number" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="49dae474-32ac-4245-b371-6ab9a39d0a9d">
+            <field Id="ba76f8e4-564f-4fee-8232-96a287d4d0b7" name="Description" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="a3b56185-3ba9-423e-8e45-90fffe1a13e9">
+      <xpObject Id="77a0a3e9-e447-4871-b582-34d24329159e" name="LocationPlan" baseClass="Drawing" userFileName="LocationPlan" designerFileName="LocationPlan.Designer" className="LocationPlan" virtualBaseClass="Drawing" virtualName="LocationPlan">
+        <superClass>
+          <inheritance Id="93df72c3-5c3f-437a-b572-099670b7dff8">
+            <xpObjectMoniker Id="3909b2d4-b8c3-4d2d-99be-4eb9eed9673c" />
+          </inheritance>
+        </superClass>
+        <saTargets>
+          <simpleAssociation Id="fdf53c8c-a2d9-4d93-8667-16223cc3f924" sourceCollectionName="Instruments1" name="InstrumentReferencesLocationPlan" targetFieldName="LocationPlan">
+            <xpObjectMoniker Id="b60c0ee1-fa05-49db-97bc-073027e749a5" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="08fbf566-0070-4814-8093-1673cc2d612f">
+            <collectionField Id="af455e44-9802-4705-bfc5-9f3b49682689" name="Instruments1" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="abad5d4e-c31d-4cf8-98f1-c7fba928d552">
+      <xpObject Id="2d7a659d-6d6a-44a0-ba3a-a3a613053d61" name="LoopDrawing" baseClass="Drawing" userFileName="LoopDrawing" designerFileName="LoopDrawing.Designer" className="LoopDrawing" virtualBaseClass="Drawing" virtualName="LoopDrawing">
+        <superClass>
+          <inheritance Id="68ea1f98-48cb-4251-b403-6de7f7be0444">
+            <xpObjectMoniker Id="3909b2d4-b8c3-4d2d-99be-4eb9eed9673c" />
+          </inheritance>
+        </superClass>
+        <saTargets>
+          <simpleAssociation Id="0aa1fd96-c19c-4424-840c-f1afbd0ee503" sourceCollectionName="Instruments2" name="InstrumentReferencesLoopDrawing" targetFieldName="LoopDrawing">
+            <xpObjectMoniker Id="b60c0ee1-fa05-49db-97bc-073027e749a5" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="d3e4d929-06d8-4f4c-a95b-6a71dfc0c828">
+            <collectionField Id="c164408c-5475-4f2c-8d11-7bfeb2ccd473" name="Instruments2" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="3276ba9f-4ee4-40c0-9230-9edfcc003de3">
+      <xpObject Id="b60c0ee1-fa05-49db-97bc-073027e749a5" name="Instrument" baseClass="XPObject" userFileName="Instrument" designerFileName="Instrument.Designer" className="Instrument" virtualName="Instrument">
+        <fields>
+          <generalXpObjectHasFields Id="86e5b6cb-de9c-458b-98a2-5ca2367cfcd1">
+            <field Id="4d255dbc-4a53-4617-a497-b61b607cb3c8" name="TagNumber" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="c5521bb6-cf4e-42b8-a366-d4145c1af644">
+            <field Id="9caffc39-89cc-40fe-9cb6-453adbaa9c12" name="PID" virtualColumnType="PID" logicalType="PID" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="134b6b64-8d3e-4511-a34c-fb2f4f77c2ff">
+            <field Id="c06f03f7-a57f-4b5b-a07c-10e408c2f831" name="JunctionBox" virtualColumnType="JunctionBox" logicalType="JunctionBox" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="1e465ff7-db1f-46bb-a8dc-d7bcdc4aff2e">
+            <field Id="e45b4c07-1440-41f9-98bf-723d08c6c0be" name="LocationPlan" virtualColumnType="LocationPlan" logicalType="LocationPlan" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="e8e2fc70-1c56-4c3b-bd60-1117ad6c0ed9">
+            <field Id="450900e7-0826-40b0-aa88-d3ced80b22a4" name="Calibration" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="5492228b-2aa3-4bd9-a718-37b1f9b6899f">
+            <field Id="660e0773-f276-4dc1-bbb1-8ca038d36f59" name="IOType" virtualColumnType="IOType" logicalType="IOType" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="004b69d8-4f66-4cba-9a02-4fa63fe846f4">
+            <field Id="28d8e93e-c72f-4f6c-891c-97b94b7f910b" name="Loop" virtualColumnType="Loop" logicalType="Loop" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="dbcf1b53-0622-4de3-bbfb-8138896c28cc">
+            <field Id="7035f2ec-5383-425f-a275-749eedd5e550" name="LoopDrawing" virtualColumnType="LoopDrawing" logicalType="LoopDrawing" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="834a3707-e6d7-4ac2-aaf6-7e7f85659fed">
+            <field Id="74880871-3be6-4dde-8305-85e22954c521" name="ControlSystem" virtualColumnType="ControlSystem" logicalType="ControlSystem" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="664ceff6-f2d9-4d16-bbdd-d10d46e1372f">
+            <field Id="ab0ad876-338a-40af-ac63-da5f68829c38" name="InstrumentType" virtualColumnType="InstrumentType" logicalType="InstrumentType" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="91ec052e-138b-42f9-b57e-da2acfca8ca4">
+            <field Id="6e9792b4-88ea-4a37-8f0b-ec0426d20160" name="ServiceDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="072e848d-3b2a-4b58-a3b7-54ed1a48141b">
+            <field Id="2a806ed4-b125-4e6a-b3b0-901360dc2a36" name="ResponsibleCompany" virtualColumnType="Company" logicalType="Company" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="d3d5ebf4-1a82-40bb-8598-332bcc96902a">
+      <xpObject Id="adc8a27c-ef68-4570-a2f3-d02ee68cd85b" name="IOType" baseClass="XPObject" userFileName="IOType" designerFileName="IOType.Designer" className="IOType" virtualName="IOType">
+        <fields>
+          <generalXpObjectHasFields Id="ac9b7320-291e-4b37-ab22-d16285009dfd">
+            <field Id="144f78d7-f837-4231-bc37-cc3e38ac997f" name="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="767c4cb3-2234-4776-b313-0626b1314300">
+            <field Id="fc5fd5a9-0cf5-4dab-b2ee-4b10eb631ec9" name="Description" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="fa295c25-d019-48f2-87a8-2536518df77c" sourceCollectionName="Instruments" name="InstrumentReferencesIOType" targetFieldName="IOType">
+            <xpObjectMoniker Id="b60c0ee1-fa05-49db-97bc-073027e749a5" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="0dfd5add-2fc5-445b-9f1c-e1bd07c7990b">
+            <collectionField Id="d82b18dc-8238-4905-a77f-f272c5bd0731" name="Instruments" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="6f605ff0-5c4e-4251-92db-7b339e3f0c75">
+      <xpObject Id="2f1ef3ee-6829-45ef-9d07-5364e6182a9e" name="ControlSystem" baseClass="XPObject" userFileName="ControlSystem" designerFileName="ControlSystem.Designer" className="ControlSystem" virtualName="ControlSystem">
+        <fields>
+          <generalXpObjectHasFields Id="d014fdda-c25c-40f8-ad7c-ae450aa2bb3b">
+            <field Id="d46e75fb-fab5-47af-bdf6-27e544a96891" name="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="036f49b6-f7b4-4c31-88ea-4a35e9f826d6">
+            <field Id="f177a30f-7861-4055-8367-ae9aba40e1dd" name="Type" virtualColumnType="ControlSystemType" logicalType="ControlSystemType" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="a8d4478c-fe95-4506-8834-9652df6daaa4">
+            <field Id="dc9b4ec1-e574-47ae-b556-971fb3bba7ee" name="Description" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="e1fb9c5b-e441-4244-b186-b715885bfd37" sourceCollectionName="Instruments" name="InstrumentReferencesControlSystem" targetFieldName="ControlSystem">
+            <xpObjectMoniker Id="b60c0ee1-fa05-49db-97bc-073027e749a5" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="6e6f615c-c564-41f9-a379-e5887a72d79b">
+            <collectionField Id="e87534d2-db45-41c2-a15a-554885065fef" name="Instruments" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="05f5e6d7-e14e-4af6-b547-9d2b17563382">
+      <xpObject Id="fc039ac1-deb0-4e02-a9e8-cdae52b2faca" name="ControlSystemType" baseClass="XPObject" userFileName="ControlSystemType" designerFileName="ControlSystemType.Designer" className="ControlSystemType" virtualName="ControlSystemType">
+        <fields>
+          <generalXpObjectHasFields Id="fbaef594-0283-452b-a118-b5ab530b2e85">
+            <field Id="870f1e18-c799-4c6b-a058-746d63ea6649" name="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="9b59bf4a-9c97-4c33-bfa7-0fc1a98d131a">
+            <field Id="98a775bd-1182-40ec-b168-478f4e82f352" name="Description" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="07e6fdd0-d42c-4b6b-87bb-fbcc12aec19d" sourceCollectionName="ControlSystems" name="ControlSystemReferencesControlSystemType" targetFieldName="Type">
+            <xpObjectMoniker Id="2f1ef3ee-6829-45ef-9d07-5364e6182a9e" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="e4620163-a124-43e1-bdc7-7036e9055b14">
+            <collectionField Id="ee234154-179c-4991-959f-5ec7c1ebc373" name="ControlSystems" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="fca8d1e0-94f4-425f-b684-d0e91a14ac45">
+      <xpObject Id="0b9529ab-3343-4fac-8ea3-320c2fdb452c" name="Area" baseClass="XPObject" userFileName="Area" designerFileName="Area.Designer" className="Area" virtualName="Area">
+        <fields>
+          <generalXpObjectHasFields Id="67f7ae85-6d40-4fbc-a658-67f2087eda78">
+            <field Id="3fd95870-76d9-4abf-88e4-b7d0d95b9545" name="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <mMTarget>
+          <manyToManyRelationship Id="6c043b87-d625-43cb-b68e-7461108f443b" sourceCollectionName="Loops" name="LoopReferencesArea" targetCollectionName="Areas">
+            <xpObjectMoniker Id="4f9a3ea4-c94f-40c6-92a8-388c69865a23" />
+          </manyToManyRelationship>
+        </mMTarget>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="3ea46c25-b357-46fe-8995-cfeaa0e6de62">
+            <collectionField Id="ea0b2ddb-339e-40e2-8206-a7dbadc8d6aa" name="Loops" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="d1b1cb40-b1d3-43ba-a68a-d15ddd68be75">
+      <xpObject Id="62507c34-77b8-49a2-b479-20e131c3e60d" name="InstrumentType" baseClass="XPObject" userFileName="InstrumentType" designerFileName="InstrumentType.Designer" className="InstrumentType" virtualName="InstrumentType">
+        <fields>
+          <generalXpObjectHasFields Id="55b1e85f-a537-4c32-8c43-54f35a5473c4">
+            <field Id="3194d5cb-b3bc-483e-b4ac-94b666eca4b0" name="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="23eeb364-04c1-4cb7-8e26-349597f65d91" sourceCollectionName="Instruments" name="InstrumentReferencesInstrumentType" targetFieldName="InstrumentType">
+            <xpObjectMoniker Id="b60c0ee1-fa05-49db-97bc-073027e749a5" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="b01ab1f8-2057-4c56-9f83-69344de46560">
+            <collectionField Id="dba34495-4ede-4207-b396-684ee1004ac4" name="Instruments" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+  </classes>
+</dataBaseObjectModel>

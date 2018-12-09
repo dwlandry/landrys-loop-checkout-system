@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
+      <Item Id="Dashboard">
+        <Items Id="Items">
+          <Item Id="@dfe940de-c62f-4254-acc0-42e0b15ba5c9" ViewId="Example Dashboard View" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+</Application>

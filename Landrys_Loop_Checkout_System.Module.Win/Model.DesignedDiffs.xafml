@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <NavigationItems>
+    <Items>
+      <Item Id="Charts" ImageName="Action_View_Chart" Index="1" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="Instrument_ListView_Chart_ByIO" ViewId="Instrument_ListView_Chart_ByIO" IsNewNode="True" />
+          <Item Id="Loop_ListView_Chart" ViewId="Loop_ListView_Chart" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Reports" Index="2" />
+      <Item Id="Default" Index="4" />
+      <Item Id="Dashboard" Removed="True" />
+    </Items>
+  </NavigationItems>
+  <SchemaModules>
+    <SchemaModule Name="ImportWizardModule" Version="15.2.4.3" IsNewNode="True" />
+    <SchemaModule Name="ImportWizardWindowsFormsModule" Version="15.2.4.3" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="15.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerWindowsFormsModule" Version="15.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="15.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SystemWindowsFormsModule" Version="15.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="XpandFileAttachmentsModule" Version="15.2.4.3" IsNewNode="True" />
+    <SchemaModule Name="XpandSchedulerModule" Version="15.2.4.3" IsNewNode="True" />
+    <SchemaModule Name="XpandSchedulerWindowsFormsModule" Version="15.2.4.3" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="Instrument_ListView_Chart_ByIO" ClassName="Landrys_Loop_Checkout_System.Module.BusinessObjects.Db151516LoopCheckout.Instrument" EditorTypeName="DevExpress.ExpressApp.Chart.Win.ChartListEditor" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Oid" PropertyName="Oid" Width="50" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="TagNumber" PropertyName="TagNumber" Width="400" SortIndex="0" SortOrder="Ascending" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="DataSheet" PropertyName="DataSheet" Width="70" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="PID" PropertyName="PID" Width="70" Index="2" IsNewNode="True" />
+        <ColumnInfo Id="JunctionBox" PropertyName="JunctionBox" Width="70" Index="3" IsNewNode="True" />
+        <ColumnInfo Id="LocationPlan" PropertyName="LocationPlan" Width="70" Index="4" IsNewNode="True" />
+        <ColumnInfo Id="Calibration" PropertyName="Calibration" Width="70" Index="5" IsNewNode="True" />
+        <ColumnInfo Id="IOType" PropertyName="IOType" Width="70" Index="6" IsNewNode="True" />
+        <ColumnInfo Id="Loop" PropertyName="Loop" Width="70" Index="7" IsNewNode="True" />
+        <ColumnInfo Id="LoopDrawing" PropertyName="LoopDrawing" Width="70" Index="8" IsNewNode="True" />
+        <ColumnInfo Id="ControlSystem" PropertyName="ControlSystem" Width="70" Index="9" IsNewNode="True" />
+        <ColumnInfo Id="InstrumentType" PropertyName="InstrumentType" Width="70" Index="10" IsNewNode="True" />
+        <ColumnInfo Id="ServiceDescription" PropertyName="ServiceDescription" Width="70" Index="11" IsNewNode="True" />
+        <ColumnInfo Id="ResponsibleCompany" PropertyName="ResponsibleCompany" Width="70" Index="12" IsNewNode="True" />
+      </Columns>
+      <ChartSettings Settings="﻿&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#xD;&#xA;&lt;ChartXmlSerializer version=&quot;15.2.4.0&quot;&gt;&#xD;&#xA;  &lt;Chart AppearanceNameSerializable=&quot;Default&quot; SelectionMode=&quot;None&quot; SeriesSelectionMode=&quot;Series&quot;&gt;&#xD;&#xA;    &lt;Diagram TypeNameSerializable=&quot;XYDiagram&quot;&gt;&#xD;&#xA;      &lt;AxisX VisibleInPanesSerializable=&quot;-1&quot; /&gt;&#xD;&#xA;      &lt;AxisY VisibleInPanesSerializable=&quot;-1&quot; /&gt;&#xD;&#xA;    &lt;/Diagram&gt;&#xD;&#xA;    &lt;DataContainer RefreshDataOnRepaint=&quot;true&quot; BoundSeriesSorting=&quot;None&quot; SeriesDataMember=&quot;Loop.LoopCheckStatus.Description&quot; DataMember=&quot;&quot;&gt;&#xD;&#xA;      &lt;SeriesTemplate ArgumentDataMember=&quot;IOType.Name&quot; SummaryFunction=&quot;COUNT()&quot; /&gt;&#xD;&#xA;    &lt;/DataContainer&gt;&#xD;&#xA;    &lt;Titles&gt;&#xD;&#xA;      &lt;Item1 Text=&quot;Loop Check Status&amp;#xD;&amp;#xA;by IO Type&quot; /&gt;&#xD;&#xA;    &lt;/Titles&gt;&#xD;&#xA;  &lt;/Chart&gt;&#xD;&#xA;&lt;/ChartXmlSerializer&gt;" IsNewNode="True" />
+    </ListView>
+    <ListView Id="Loop_ListView_Chart" ClassName="Landrys_Loop_Checkout_System.Module.BusinessObjects.Db151516LoopCheckout.Loop" MasterDetailMode="ListViewOnly" EditorTypeName="DevExpress.ExpressApp.Chart.Win.ChartListEditor" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="LoopNumber" PropertyName="LoopNumber" Index="0" Width="400" SortIndex="0" SortOrder="Ascending" IsNewNode="True" />
+        <ColumnInfo Id="LoopCheckStatus" PropertyName="LoopCheckStatus" Index="9" Width="70" IsNewNode="True" />
+      </Columns>
+      <ChartSettings Settings="﻿&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#xD;&#xA;&lt;ChartXmlSerializer version=&quot;15.2.4.0&quot;&gt;&#xD;&#xA;  &lt;Chart AppearanceNameSerializable=&quot;Default&quot; SelectionMode=&quot;None&quot; SeriesSelectionMode=&quot;Series&quot;&gt;&#xD;&#xA;    &lt;Diagram TypeNameSerializable=&quot;SimpleDiagram3D&quot; RuntimeScrolling=&quot;true&quot; RuntimeZooming=&quot;true&quot; RuntimeRotation=&quot;true&quot; RotationMatrixSerializable=&quot;1;0;0;0;0;0.5;-0.866025403784439;0;0;0.866025403784439;0.5;0;0;0;0;1&quot; /&gt;&#xD;&#xA;    &lt;DataContainer RefreshDataOnRepaint=&quot;true&quot; BoundSeriesSorting=&quot;None&quot; DataMember=&quot;&quot;&gt;&#xD;&#xA;      &lt;SeriesTemplate /&gt;&#xD;&#xA;      &lt;SeriesSerializable&gt;&#xD;&#xA;        &lt;Item1 LegendTextPattern=&quot;{A}&quot; Name=&quot;Loop Check Status&quot; ArgumentDataMember=&quot;LoopCheckStatus.Description&quot; ToolTipHintDataMember=&quot;LoopCheckStatus&quot; SummaryFunction=&quot;COUNT()&quot;&gt;&#xD;&#xA;          &lt;View SweepDirection=&quot;Counterclockwise&quot; TypeNameSerializable=&quot;Pie3DSeriesView&quot; /&gt;&#xD;&#xA;        &lt;/Item1&gt;&#xD;&#xA;      &lt;/SeriesSerializable&gt;&#xD;&#xA;    &lt;/DataContainer&gt;&#xD;&#xA;    &lt;Legend Visibility=&quot;True&quot; /&gt;&#xD;&#xA;    &lt;Titles&gt;&#xD;&#xA;      &lt;Item1 Text=&quot;Loop Check Status&quot; /&gt;&#xD;&#xA;    &lt;/Titles&gt;&#xD;&#xA;  &lt;/Chart&gt;&#xD;&#xA;&lt;/ChartXmlSerializer&gt;" IsNewNode="True" />
+    </ListView>
+    <ListView Id="Loop_ListView_Varied">
+      <Variants>
+        <Variant Id="Chart" ViewID="Loop_ListView_Chart" Caption="Chart" IsNewNode="True" />
+      </Variants>
+    </ListView>
+    <ListView Id="Loop_ListView_WithDetails" EditorTypeName="DevExpress.ExpressApp.Win.Editors.GridListEditor">
+      <ChartSettings Settings="" />
+    </ListView>
+    <DetailView Id="LoopCheck_DetailView">
+      <Items>
+        <PropertyEditor Id="AllDay" AllowEdit="False" />
+        <PropertyEditor Id="Description" AllowEdit="True" />
+        <PropertyEditor Id="Subject" AllowEdit="False" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Event" Removed="True" />
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors">
+            <LayoutItem Id="Description" Removed="True" />
+            <LayoutItem Id="RecurrenceInfoXml" Removed="True" />
+          </LayoutGroup>
+          <LayoutGroup Id="Resources_Group" Removed="True" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="LoopCheck_ListView" EditorTypeName="DevExpress.ExpressApp.Win.Editors.GridListEditor" />
+    <ListView Id="LoopCheck_ListView_Calendar" SchedulerViewType="Timeline" />
+  </Views>
+</Application>

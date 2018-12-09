@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DashboardView Id="Example Dashboard View" Removed="True">
+      <Items Id="Items">
+        <DashboardViewItem Id="Loop Chart" ViewId="Loop_ListView_Chart" />
+      </Items>
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutItem Id="Loop Chart" ViewItem="Loop Chart" />
+        </LayoutGroup>
+      </Layout>
+    </DashboardView>
+  </Views>
+</Application>

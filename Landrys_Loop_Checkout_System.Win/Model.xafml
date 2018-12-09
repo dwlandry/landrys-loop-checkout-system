@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Options Skin="DevExpress Style" UIType="MultipleWindowSDI" FormStyle="Standard">
+    <RibbonOptions RibbonControlStyle="Office2013" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="ImportWizardModule" Version="15.2.4.3" IsNewNode="True" />
+    <SchemaModule Name="ImportWizardWindowsFormsModule" Version="15.2.4.3" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="15.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SystemWindowsFormsModule" Version="15.2.4.0" IsNewNode="True" />
+  </SchemaModules>
+</Application>

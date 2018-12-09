@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <ListView Id="Loop_ListView_Varied">
+      <Variants Id="Variants">
+        <Variant Id="Chart - Status By IO Type" ViewID="Loop_ListView_Chart_ByIOtype" Caption="Chart - Status By IO Type" />
+      </Variants>
+    </ListView>
+  </Views>
+</Application>
