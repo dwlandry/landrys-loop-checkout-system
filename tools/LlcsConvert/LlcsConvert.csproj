@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <RootNamespace>LlcsConvert</RootNamespace>
+    <AssemblyName>LlcsConvert</AssemblyName>
+    <PlatformTarget>x86</PlatformTarget>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SqlServer.Compact" Version="4.0.8876.1" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.119" />
+    <None Include="empty-template.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Target Name="CopySqlCeNatives" AfterTargets="CopyFilesToOutputDirectory">
+    <ItemGroup>
+      <SqlCeNative Include="$(NuGetPackageRoot)microsoft.sqlserver.compact\4.0.8876.1\NativeBinaries\x86\*.dll" />
+    </ItemGroup>
+    <Copy SourceFiles="@(SqlCeNative)" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true" Condition="'@(SqlCeNative)' != ''" />
+  </Target>
+</Project>
