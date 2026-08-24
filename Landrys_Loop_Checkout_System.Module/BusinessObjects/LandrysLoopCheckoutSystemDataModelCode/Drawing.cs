@@ -1,32 +1,24 @@
-﻿using System;
-using DevExpress.Xpo;
-using DevExpress.Data.Filtering;
-using System.Collections.Generic;
-using System.ComponentModel;
-using DevExpress.Persistent.BaseImpl;
-using DevExpress.ExpressApp;
-using Xpand.ExpressApp.FileAttachment.BusinessObjects;
+﻿using DevExpress.ExpressApp;
 using DevExpress.Persistent.Base;
-using Xpand.ExpressApp.FileAttachment;
+using DevExpress.Persistent.BaseImpl;
+using DevExpress.Xpo;
+using Landrys_Loop_Checkout_System.Module.BusinessObjects;
 
 namespace Landrys_Loop_Checkout_System.Module.BusinessObjects.Db151516LoopCheckout
 {
     [ImageName("Drawing")]
     [DefaultListViewOptions(true, NewItemRowPosition.Bottom)]
-    [FileAttachment("File")]
     public partial class Drawing
     {
         public Drawing(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction();}
 
-        // Fields...
-        //private FileSystemLinkObject _File;
         private XPCollection<AuditDataItemPersistent> auditTrail;
 
-        public FileSystemLinkObject File
+        public FileLinkObject File
         {
-            get { return GetPropertyValue<FileSystemLinkObject>("File"); }
-            set { SetPropertyValue("File", value); }
+            get { return GetPropertyValue<FileLinkObject>(nameof(File)); }
+            set { SetPropertyValue(nameof(File), value); }
         }
 
         public XPCollection<AuditDataItemPersistent> AuditTrail

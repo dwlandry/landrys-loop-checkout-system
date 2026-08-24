@@ -10,13 +10,11 @@ using DevExpress.Persistent.BaseImpl;
 using DevExpress.Xpo.DB;
 using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.Base.General;
-using Xpand.ExpressApp.Security.Core;
 
 namespace Landrys_Loop_Checkout_System.Module.BusinessObjects.Db151516LoopCheckout
 {
     [DefaultClassOptions, ImageName("LoopCheckV2"), DefaultProperty("LoopNumber")]
     [DefaultListViewOptions(true, NewItemRowPosition.Bottom)]
-    [FullPermission]
     public partial class Loop
     {
         public Loop(Session session) : base(session) { }

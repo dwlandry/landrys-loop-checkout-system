@@ -146,7 +146,7 @@
             this.Title.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Solid;
             this.Title.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Title.BorderWidth = 1F;
-            this.Title.Font = new System.Drawing.Font("Times New Roman", 24F);
+            this.Title.Font = new DevExpress.Drawing.DXFont("Times New Roman", 24F);
             this.Title.ForeColor = System.Drawing.Color.Black;
             this.Title.Name = "Title";
             // 
@@ -157,7 +157,7 @@
             this.FieldCaption.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Solid;
             this.FieldCaption.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.FieldCaption.BorderWidth = 1F;
-            this.FieldCaption.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
+            this.FieldCaption.Font = new DevExpress.Drawing.DXFont("Times New Roman", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.FieldCaption.ForeColor = System.Drawing.Color.Black;
             this.FieldCaption.Name = "FieldCaption";
             // 
@@ -168,7 +168,7 @@
             this.PageInfo.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Solid;
             this.PageInfo.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.PageInfo.BorderWidth = 1F;
-            this.PageInfo.Font = new System.Drawing.Font("Times New Roman", 8F);
+            this.PageInfo.Font = new DevExpress.Drawing.DXFont("Times New Roman", 8F);
             this.PageInfo.ForeColor = System.Drawing.Color.Black;
             this.PageInfo.Name = "PageInfo";
             // 
@@ -179,7 +179,7 @@
             this.DataField.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Solid;
             this.DataField.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.DataField.BorderWidth = 1F;
-            this.DataField.Font = new System.Drawing.Font("Times New Roman", 8F);
+            this.DataField.Font = new DevExpress.Drawing.DXFont("Times New Roman", 8F);
             this.DataField.ForeColor = System.Drawing.Color.Black;
             this.DataField.Name = "DataField";
             // 
@@ -281,7 +281,7 @@
         series1};
             this.xrChart3.SizeF = new System.Drawing.SizeF(650.0002F, 375.4166F);
             this.xrChart3.StylePriority.UseBorders = false;
-            chartTitle1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Underline);
+            chartTitle1.DXFont = new DevExpress.Drawing.DXFont("Tahoma", 12F, DevExpress.Drawing.DXFontStyle.Underline);
             chartTitle1.Text = "IO Check Status by Category";
             this.xrChart3.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
             chartTitle1});
@@ -313,7 +313,7 @@
         series2};
             this.xrChart2.SizeF = new System.Drawing.SizeF(319F, 350F);
             this.xrChart2.StylePriority.UseBorders = false;
-            chartTitle2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Underline);
+            chartTitle2.DXFont = new DevExpress.Drawing.DXFont("Tahoma", 12F, DevExpress.Drawing.DXFontStyle.Underline);
             chartTitle2.Text = "Overall IO Check Status";
             this.xrChart2.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
             chartTitle2});
@@ -345,7 +345,7 @@
             this.xrChart1.SeriesTemplate.SummaryFunction = "COUNT()";
             this.xrChart1.SizeF = new System.Drawing.SizeF(319F, 350F);
             this.xrChart1.StylePriority.UseBorders = false;
-            chartTitle3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Underline);
+            chartTitle3.DXFont = new DevExpress.Drawing.DXFont("Tahoma", 12F, DevExpress.Drawing.DXFontStyle.Underline);
             chartTitle3.Text = "IO Check Status by Type";
             this.xrChart1.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
             chartTitle3});

@@ -1,20 +1,14 @@
 ﻿using System;
-using System.Linq;
-using DevExpress.ExpressApp;
 using DevExpress.Data.Filtering;
-using DevExpress.Persistent.Base;
+using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Updating;
 using DevExpress.ExpressApp.Security;
-using DevExpress.ExpressApp.Security.Strategy;
-using DevExpress.Xpo;
-using DevExpress.ExpressApp.Xpo;
 using DevExpress.Persistent.BaseImpl;
+using DevExpress.Persistent.BaseImpl.PermissionPolicy;
 using Landrys_Loop_Checkout_System.Module.BusinessObjects.Db151516LoopCheckout;
-using System.Windows.Forms;
 using Landrys_Loop_Checkout_System.Module.BusinessObjects;
 
 namespace Landrys_Loop_Checkout_System.Module.DatabaseUpdate {
-    // For more typical usage scenarios, be sure to check out https://documentation.devexpress.com/eXpressAppFramework/clsDevExpressExpressAppUpdatingModuleUpdatertopic.aspx
     public class Updater : ModuleUpdater {
         public Updater(IObjectSpace objectSpace, Version currentDBVersion) :
             base(objectSpace, currentDBVersion) {
@@ -22,7 +16,6 @@ namespace Landrys_Loop_Checkout_System.Module.DatabaseUpdate {
         public override void UpdateDatabaseAfterUpdateSchema() {
             base.UpdateDatabaseAfterUpdateSchema();
 
-            #region Create Loop Status
             CreateLoopStatus(1, "Not Ready for Check");
             CreateLoopStatus(2, "Ready for Check");
             CreateLoopStatus(3, "Being Checked");
@@ -32,9 +25,7 @@ namespace Landrys_Loop_Checkout_System.Module.DatabaseUpdate {
             CreateLoopStatus(7, "Complete but waiting on config repair");
             CreateLoopStatus(8, "Complete but waiting on signature");
             CreateLoopStatus(9, "Complete - Ready for Startup");
-            #endregion
 
-            #region Initial setup of Job Info
             JobInfo jobInfo = ObjectSpace.FindObject<JobInfo>(CriteriaOperator.Parse("Oid>0"));
             if (jobInfo == null)
             {
@@ -44,63 +35,24 @@ namespace Landrys_Loop_Checkout_System.Module.DatabaseUpdate {
                 jobInfo.ClientName = "Enter the Client Name";
                 ObjectSpace.CommitChanges();
             }
-            #endregion
 
-            #region Create Default Control System Types
             CreateControlSystemType("DCS", "Primary digital control system");
             CreateControlSystemType("SIS", "Safety systems, triconex, etc.");
             CreateControlSystemType("Other", "Local PLC systems; manufactuer supplied PLCs");
-            #endregion
 
-            #region Create Default IO Types
             CreateIOType("AI");
             CreateIOType("AO");
             CreateIOType("DI");
             CreateIOType("DO");
-            #endregion
 
-            #region Create Schedules
             CreateSchedule("Original");
             CreateSchedule("Current");
             CreateSchedule("Actual");
-            #endregion
 
-            #region Create Default Security Roles
-            SecuritySystemRole userRole = ObjectSpace.FindObject<SecuritySystemRole>(new BinaryOperator("Name", "User Role"));
-            if (userRole == null)
-            {
-                userRole = ObjectSpace.CreateObject<SecuritySystemRole>();
-                userRole.Name = "User Role";
-                userRole.SetTypePermissions<AuditDataItemPersistent>(SecurityOperations.Read, SecuritySystemModifier.Allow);
-            }
-
-            //SecuritySystemRole role = ObjectSpace.FindObject<SecuritySystemRole>(new BinaryOperator("Name", "Don't fuck with my shit without permission"));
-            //if (role == null)
-            //{
-            //    role = ObjectSpace.CreateObject<SecuritySystemRole>();
-            //    role.Name = "Don't fuck with my shit without permission";
-            //    //Prohibit full access to persistent data types (inherited from the XPBaseObject class)
-            //    //role.AddPermission(new ObjectAccessPermission(typeof(object), ObjectAccess.AllAccess));
-            //    //role.AddPermission(new ObjectAccessPermission(typeof(XPBaseObject),
-            //    //   ObjectAccess.AllAccess, ObjectAccessModifier.Deny));
-            //    role.SetTypePermissions<XPBaseObject>(SecurityOperations.ReadOnlyAccess, SecuritySystemModifier.Allow);
-            //}
-
-            //ObjectSpace.CommitChanges();
-            #endregion
-
-            //SecuritySystemUser user = ObjectSpace.FindObject<SecuritySystemUser>(CriteriaOperator.Parse("Oid>?", 0));
-            //if (user == null)
-            //{
-            //    MessageBox.Show("User is null.");
-
-            //}
-            //else
-            //{
-            //    MessageBox.Show(string.Format("User: {0}", user.UserName));
-            //}
-
+            CreateAdminRole();
             CreateDefaultRole();
+            EnsureUsersHaveAdministratorRole();
+            ObjectSpace.CommitChanges();
         }
 
         private void CreateSchedule(string name)
@@ -135,17 +87,6 @@ namespace Landrys_Loop_Checkout_System.Module.DatabaseUpdate {
                 ObjectSpace.CommitChanges();
             }
         }
-        private void CreateIOType(string name, string description)
-        {
-            IOType ioType = ObjectSpace.FindObject<IOType>(CriteriaOperator.Parse("Name=?", name));
-            if (ioType == null)
-            {
-                ioType = ObjectSpace.CreateObject<IOType>();
-                ioType.Name = name;
-                ioType.Description = description;
-                ObjectSpace.CommitChanges();
-            }
-        }
         private void CreateIOType(string name)
         {
             IOType ioType = ObjectSpace.FindObject<IOType>(CriteriaOperator.Parse("Name=?", name));
@@ -158,25 +99,45 @@ namespace Landrys_Loop_Checkout_System.Module.DatabaseUpdate {
         }
         public override void UpdateDatabaseBeforeUpdateSchema() {
             base.UpdateDatabaseBeforeUpdateSchema();
-            //if(CurrentDBVersion < new Version("1.1.0.0") && CurrentDBVersion > new Version("0.0.0.0")) {
-            //    RenameColumn("DomainObject1Table", "OldColumnName", "NewColumnName");
-            //}
         }
-        private SecuritySystemRole CreateDefaultRole() {
-            
-            SecuritySystemRole defaultRole = ObjectSpace.FindObject<SecuritySystemRole>(new BinaryOperator("Name", "Default"));
-            if(defaultRole == null) {
-                defaultRole = ObjectSpace.CreateObject<SecuritySystemRole>();
-                defaultRole.Name = "Default";
-
-                defaultRole.AddObjectAccessPermission<SecuritySystemUser>("[Oid] = CurrentUserId()", SecurityOperations.ReadOnlyAccess);
-                defaultRole.AddMemberAccessPermission<SecuritySystemUser>("ChangePasswordOnFirstLogon", SecurityOperations.Write, "[Oid] = CurrentUserId()");
-                defaultRole.AddMemberAccessPermission<SecuritySystemUser>("StoredPassword", SecurityOperations.Write, "[Oid] = CurrentUserId()");
-                defaultRole.SetTypePermissionsRecursively<SecuritySystemRole>(SecurityOperations.Read, SecuritySystemModifier.Allow);
-                defaultRole.SetTypePermissionsRecursively<ModelDifference>(SecurityOperations.ReadWriteAccess, SecuritySystemModifier.Allow);
-                defaultRole.SetTypePermissionsRecursively<ModelDifferenceAspect>(SecurityOperations.ReadWriteAccess, SecuritySystemModifier.Allow);
+        private PermissionPolicyRole CreateAdminRole() {
+            PermissionPolicyRole adminRole = ObjectSpace.FirstOrDefault<PermissionPolicyRole>(role => role.Name == "Administrators");
+            if (adminRole == null) {
+                adminRole = ObjectSpace.CreateObject<PermissionPolicyRole>();
+                adminRole.Name = "Administrators";
+                adminRole.IsAdministrative = true;
             }
+            return adminRole;
+        }
+        private PermissionPolicyRole CreateDefaultRole() {
+            PermissionPolicyRole defaultRole = ObjectSpace.FirstOrDefault<PermissionPolicyRole>(role => role.Name == "Default");
+            if(defaultRole == null) {
+                defaultRole = ObjectSpace.CreateObject<PermissionPolicyRole>();
+                defaultRole.Name = "Default";
+            }
+            defaultRole.IsAdministrative = true;
             return defaultRole;
+        }
+
+        private void EnsureUsersHaveAdministratorRole()
+        {
+            PermissionPolicyRole adminRole = CreateAdminRole();
+            foreach (PermissionPolicyUser user in ObjectSpace.GetObjects<PermissionPolicyUser>())
+            {
+                bool hasAdmin = false;
+                foreach (PermissionPolicyRole role in user.Roles)
+                {
+                    if (role == adminRole)
+                    {
+                        hasAdmin = true;
+                        break;
+                    }
+                }
+                if (!hasAdmin)
+                {
+                    user.Roles.Add(adminRole);
+                }
+            }
         }
     }
 }

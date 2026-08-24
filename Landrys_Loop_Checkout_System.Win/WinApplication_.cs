@@ -1,34 +1,24 @@
-﻿using DevExpress.ExpressApp;
+﻿using System;
+using System.IO;
+using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Security;
 using DevExpress.ExpressApp.Win;
-using DevExpress.Xpo.DB;
+using DevExpress.Persistent.BaseImpl.PermissionPolicy;
 using Landrys_Loop_Checkout_System.Module;
 using Landrys_Loop_Checkout_System.Module.Win;
 using Landrys_Loop_Checkout_System.Module.Win.Controllers;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Landrys_Loop_Checkout_System.Win
 {
     public partial class Landrys_Loop_Checkout_SystemWindowsFormsApplication : WinApplication, IApplicationFactory
     {
-        //protected override void ReadLastLogonParametersCore(DevExpress.ExpressApp.Utils.SettingsStorage storage, object logonObject)
-        //{
-        //    AuthenticationStandardLogonParameters standardLogonParameters = logonObject as AuthenticationStandardLogonParameters;
-        //    if ((standardLogonParameters != null) && string.IsNullOrEmpty(standardLogonParameters.UserName))
-        //    {
-        //        base.ReadLastLogonParametersCore(storage, logonObject);
-        //    }
-        //}
         protected override void OnLoggingOn(LogonEventArgs args)
         {
             base.OnLoggingOn(args);
-            ChangeDatabaseHelper.UpdateDatabaseName(this, ((IDataFilePathParameter)args.LogonParameters).DataFilePath);
+            if (args.LogonParameters is IDataFilePathParameter fileParameter)
+            {
+                ChangeDatabaseHelper.UpdateDatabaseName(this, fileParameter.DataFilePath);
+            }
         }
         protected override bool OnLogonFailed(object logonParameters, Exception e)
         {
@@ -41,32 +31,44 @@ namespace Landrys_Loop_Checkout_System.Win
         public static Landrys_Loop_Checkout_SystemWindowsFormsApplication CreateApplication()
         {
             Landrys_Loop_Checkout_SystemWindowsFormsApplication winApplication = new Landrys_Loop_Checkout_SystemWindowsFormsApplication();
-            // Refer to the https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112680.aspx help article for more details on how to provide a custom splash form.
-            //winApplication.SplashScreen = new DevExpress.ExpressApp.Win.Utils.DXSplashScreen("YourSplashImage.png");
-
-            //((SecurityBase)winApplication.Security).Authentication = new WinChangeDatabaseStandardAuthentication();
 
             WinChangeDatabaseActiveDirectoryAuthentication activeDirectoryAuthentication = new WinChangeDatabaseActiveDirectoryAuthentication();
             activeDirectoryAuthentication.CreateUserAutomatically = true;
+            SecurityStrategyComplex security = (SecurityStrategyComplex)winApplication.Security;
+            security.Authentication = activeDirectoryAuthentication;
+            security.NewUserRoleName = "Administrators";
 
-            ((SecurityStrategyComplex)winApplication.Security).Authentication = activeDirectoryAuthentication;
-
-            String[] arguments = Environment.GetCommandLineArgs();
-            if (arguments.Length > 1)
+            string[] arguments = Environment.GetCommandLineArgs();
+            string jobFilePath = FindJobFileArgument(arguments);
+            if (!string.IsNullOrEmpty(jobFilePath))
             {
-                string connectionString = arguments[1].ToString();
-                winApplication.ConnectionString = MSSqlCEConnectionProvider.GetConnectionString(connectionString);
-                winApplication.Title = Path.GetFileName(connectionString);
+                winApplication.ConnectionString = JobDatabase.GetConnectionString(jobFilePath);
+                winApplication.Title = Path.GetFileName(jobFilePath);
             }
             else
             {
-                //winApplication.ConnectionString = MSSqlCEConnectionProvider.GetConnectionString(@"C:\Users\dlandry\OneDrive\Visual Studio 2015\Projects\Landrys Loop Checkout System\Datafile\AutoCreatedFile.llcs");
-                winApplication.ConnectionString= "Integrated Security = SSPI; Pooling = false; Data Source = (localdb)\\mssqllocaldb; Initial Catalog = Landrys_Loop_Checkout_System";
-                //winApplication.ConnectionString = DevExpress.ExpressApp.Xpo.InMemoryDataStoreProvider.ConnectionString;
-                winApplication.Title = "In-Memory Data Provider - WORK WILL NOT BE SAVED.";
-                
+                string defaultJob = JobDatabase.DefaultJobFilePath;
+                winApplication.ConnectionString = JobDatabase.GetConnectionString(defaultJob);
+                winApplication.Title = Path.GetFileName(defaultJob);
             }
             return winApplication;
+        }
+
+        private static string FindJobFileArgument(string[] arguments)
+        {
+            for (int i = 1; i < arguments.Length; i++)
+            {
+                string argument = arguments[i];
+                if (argument.StartsWith("-", StringComparison.Ordinal) || argument.StartsWith("/", StringComparison.Ordinal))
+                {
+                    continue;
+                }
+                if (argument.EndsWith("." + JobDatabase.FileExtension, StringComparison.OrdinalIgnoreCase))
+                {
+                    return Path.GetFullPath(argument);
+                }
+            }
+            return null;
         }
     }
 }

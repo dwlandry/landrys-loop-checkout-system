@@ -1,28 +1,23 @@
-﻿using System;
-using DevExpress.Xpo;
-using DevExpress.Data.Filtering;
-using System.Collections.Generic;
-using System.ComponentModel;
-using DevExpress.Persistent.Base;
+﻿using System.ComponentModel;
 using DevExpress.ExpressApp;
-using Xpand.ExpressApp.FileAttachment.BusinessObjects;
+using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
+using DevExpress.Xpo;
+using Landrys_Loop_Checkout_System.Module.BusinessObjects;
 
 namespace Landrys_Loop_Checkout_System.Module.BusinessObjects.Db151516LoopCheckout
 {
     [DefaultClassOptions, ImageName("gauge"), DefaultProperty("TagNumber")]
     [DefaultListViewOptions(true, NewItemRowPosition.Bottom)]
-    [FileAttachment("DataSheet")]
     public partial class Instrument
     {
         public Instrument(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction(); }
 
-        // Fields...
-        private FileSystemLinkObject _DataSheet;
+        private FileLinkObject _DataSheet;
         private XPCollection<AuditDataItemPersistent> auditTrail;
 
-        public FileSystemLinkObject DataSheet
+        public FileLinkObject DataSheet
         {
             get
             {

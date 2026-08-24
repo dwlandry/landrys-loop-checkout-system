@@ -1,16 +1,9 @@
 ﻿using System;
-using System.ComponentModel;
 using DevExpress.ExpressApp;
-using DevExpress.ExpressApp.Win;
-using System.Collections.Generic;
-using DevExpress.ExpressApp.Updating;
-using DevExpress.ExpressApp.Xpo;
-using Landrys_Loop_Checkout_System.Module.Win.Controllers;
 using DevExpress.ExpressApp.Security;
-using Landrys_Loop_Checkout_System.Module;
-using Landrys_Loop_Checkout_System.Module.Win;
-using System.Configuration;
-using DevExpress.Xpo.DB;
+using DevExpress.ExpressApp.Security.ClientServer;
+using DevExpress.ExpressApp.Win;
+using DevExpress.ExpressApp.Xpo;
 
 namespace Landrys_Loop_Checkout_System.Win {
     // For more typical usage scenarios, be sure to check out https://documentation.devexpress.com/eXpressAppFramework/DevExpressExpressAppWinWinApplicationMembersTopicAll.aspx
@@ -19,7 +12,8 @@ namespace Landrys_Loop_Checkout_System.Win {
             InitializeComponent();
         }
         protected override void CreateDefaultObjectSpaceProvider(CreateCustomObjectSpaceProviderEventArgs args) {
-            args.ObjectSpaceProvider = new XPObjectSpaceProvider(args.ConnectionString, args.Connection, false);
+            args.ObjectSpaceProviders.Add(new SecuredObjectSpaceProvider(
+                (ISelectDataSecurityProvider)Security, args.ConnectionString, args.Connection, false));
             args.ObjectSpaceProviders.Add(new NonPersistentObjectSpaceProvider(TypesInfo, null));
         }
         private void Landrys_Loop_Checkout_SystemWindowsFormsApplication_CustomizeLanguagesList(object sender, CustomizeLanguagesListEventArgs e) {

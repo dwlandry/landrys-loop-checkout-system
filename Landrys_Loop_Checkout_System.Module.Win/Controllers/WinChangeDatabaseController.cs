@@ -16,6 +16,8 @@ using DevExpress.Persistent.Validation;
 using DevExpress.ExpressApp.Security;
 using System.Windows.Forms;
 using DevExpress.ExpressApp.Win;
+using Landrys_Loop_Checkout_System.Module;
+using Landrys_Loop_Checkout_System.Module.Win;
 
 namespace Landrys_Loop_Checkout_System.Module.Win.Controllers
 {
@@ -53,13 +55,11 @@ namespace Landrys_Loop_Checkout_System.Module.Win.Controllers
         {
             SaveFileDialog fld = new SaveFileDialog()
             {
-                Filter = "Landry Loop Check System files (*.llcs)|*.llcs",
+                Filter = JobDatabase.FileFilter,
                 Title = "Select desired location of the Job File.",
                 CreatePrompt = true,
                 OverwritePrompt=true,
-                DefaultExt ="llcs",
-                
-
+                DefaultExt = JobDatabase.FileExtension,
             };
             if (fld.ShowDialog()==DialogResult.OK)
             {
@@ -72,7 +72,7 @@ namespace Landrys_Loop_Checkout_System.Module.Win.Controllers
         }
         private void OpenJobAction_Execute(object sender, SimpleActionExecuteEventArgs e)
         {
-            OpenFileDialog fld = new OpenFileDialog() { Filter = "Landry Loop Check System files (*.llcs)|*.llcs", RestoreDirectory = true };
+            OpenFileDialog fld = new OpenFileDialog() { Filter = JobDatabase.FileFilter, RestoreDirectory = true };
             if (fld.ShowDialog() == DialogResult.OK)
             {
                 string fileName = fld.FileName;

@@ -1,4 +1,7 @@
-﻿namespace Landrys_Loop_Checkout_System.Win {
+﻿using DevExpress.ExpressApp.Security;
+using DevExpress.Persistent.BaseImpl.PermissionPolicy;
+
+namespace Landrys_Loop_Checkout_System.Win {
     partial class Landrys_Loop_Checkout_SystemWindowsFormsApplication {
         /// <summary> 
         /// Required designer variable.
@@ -31,7 +34,6 @@
             this.securityStrategyComplex1 = new DevExpress.ExpressApp.Security.SecurityStrategyComplex();
             this.authenticationActiveDirectory1 = new DevExpress.ExpressApp.Security.AuthenticationActiveDirectory();
             this.auditTrailModule = new DevExpress.ExpressApp.AuditTrail.AuditTrailModule();
-            this.objectsModule = new DevExpress.ExpressApp.Objects.BusinessClassLibraryCustomizationModule();
             this.chartModule = new DevExpress.ExpressApp.Chart.ChartModule();
             this.chartWindowsFormsModule = new DevExpress.ExpressApp.Chart.Win.ChartWindowsFormsModule();
             this.conditionalAppearanceModule = new DevExpress.ExpressApp.ConditionalAppearance.ConditionalAppearanceModule();
@@ -40,60 +42,43 @@
             this.reportsWindowsFormsModuleV2 = new DevExpress.ExpressApp.ReportsV2.Win.ReportsWindowsFormsModuleV2();
             this.validationModule = new DevExpress.ExpressApp.Validation.ValidationModule();
             this.validationWindowsFormsModule = new DevExpress.ExpressApp.Validation.Win.ValidationWindowsFormsModule();
-            this.importWizardModule1 = new Xpand.ExpressApp.ImportWizard.ImportWizardModule();
-            this.importWizardWindowsFormsModule1 = new Xpand.ExpressApp.ImportWizard.Win.ImportWizardWindowsFormsModule();
+            this.schedulerModule = new DevExpress.ExpressApp.Scheduler.SchedulerModuleBase();
+            this.schedulerWindowsFormsModule = new DevExpress.ExpressApp.Scheduler.Win.SchedulerWindowsFormsModule();
+            this.viewVariantsModule = new DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
-            // 
-            // securityStrategyComplex1
-            // 
             this.securityStrategyComplex1.Authentication = this.authenticationActiveDirectory1;
-            this.securityStrategyComplex1.RoleType = typeof(DevExpress.ExpressApp.Security.Strategy.SecuritySystemRole);
-            this.securityStrategyComplex1.UserType = typeof(DevExpress.ExpressApp.Security.Strategy.SecuritySystemUser);
-            // 
-            // authenticationActiveDirectory1
-            // 
+            this.securityStrategyComplex1.RoleType = typeof(PermissionPolicyRole);
+            this.securityStrategyComplex1.UserType = typeof(PermissionPolicyUser);
+            this.securityStrategyComplex1.NewUserRoleName = "Administrators";
             this.authenticationActiveDirectory1.CreateUserAutomatically = true;
             this.authenticationActiveDirectory1.LogonParametersType = null;
-            // 
-            // auditTrailModule
-            // 
             this.auditTrailModule.AuditDataItemPersistentType = typeof(DevExpress.Persistent.BaseImpl.AuditDataItemPersistent);
-            // 
-            // reportsModuleV2
-            // 
             this.reportsModuleV2.EnableInplaceReports = true;
             this.reportsModuleV2.ReportDataType = typeof(DevExpress.Persistent.BaseImpl.ReportDataV2);
             this.reportsModuleV2.ReportStoreMode = DevExpress.ExpressApp.ReportsV2.ReportStoreModes.XML;
-            // 
-            // validationModule
-            // 
             this.validationModule.AllowValidationDetailsAccess = true;
             this.validationModule.IgnoreWarningAndInformationRules = false;
-            // 
-            // Landrys_Loop_Checkout_SystemWindowsFormsApplication
-            // 
             this.ApplicationName = "Landrys Loop Checkout System";
             this.CheckCompatibilityType = DevExpress.ExpressApp.CheckCompatibilityType.DatabaseSchema;
             this.LinkNewObjectToParentImmediately = false;
             this.Modules.Add(this.module1);
             this.Modules.Add(this.module2);
+            this.Modules.Add(this.securityModule1);
             this.Modules.Add(this.auditTrailModule);
-            this.Modules.Add(this.objectsModule);
             this.Modules.Add(this.chartModule);
             this.Modules.Add(this.conditionalAppearanceModule);
             this.Modules.Add(this.validationModule);
             this.Modules.Add(this.reportsModuleV2);
-            this.Modules.Add(this.importWizardModule1);
+            this.Modules.Add(this.schedulerModule);
+            this.Modules.Add(this.viewVariantsModule);
             this.Modules.Add(this.module3);
             this.Modules.Add(this.chartWindowsFormsModule);
             this.Modules.Add(this.fileAttachmentsWindowsFormsModule);
             this.Modules.Add(this.reportsWindowsFormsModuleV2);
             this.Modules.Add(this.validationWindowsFormsModule);
-            this.Modules.Add(this.importWizardWindowsFormsModule1);
+            this.Modules.Add(this.schedulerWindowsFormsModule);
             this.Modules.Add(this.module4);
-            this.Modules.Add(this.securityModule1);
             this.Security = this.securityStrategyComplex1;
-            this.UseOldTemplates = false;
             this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.Landrys_Loop_Checkout_SystemWindowsFormsApplication_DatabaseVersionMismatch);
             this.CustomizeLanguagesList += new System.EventHandler<DevExpress.ExpressApp.CustomizeLanguagesListEventArgs>(this.Landrys_Loop_Checkout_SystemWindowsFormsApplication_CustomizeLanguagesList);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
@@ -110,7 +95,6 @@
         private DevExpress.ExpressApp.Security.SecurityStrategyComplex securityStrategyComplex1;
         private DevExpress.ExpressApp.Security.AuthenticationActiveDirectory authenticationActiveDirectory1;
         private DevExpress.ExpressApp.AuditTrail.AuditTrailModule auditTrailModule;
-        private DevExpress.ExpressApp.Objects.BusinessClassLibraryCustomizationModule objectsModule;
         private DevExpress.ExpressApp.Chart.ChartModule chartModule;
         private DevExpress.ExpressApp.Chart.Win.ChartWindowsFormsModule chartWindowsFormsModule;
         private DevExpress.ExpressApp.ConditionalAppearance.ConditionalAppearanceModule conditionalAppearanceModule;
@@ -119,7 +103,8 @@
         private DevExpress.ExpressApp.ReportsV2.Win.ReportsWindowsFormsModuleV2 reportsWindowsFormsModuleV2;
         private DevExpress.ExpressApp.Validation.ValidationModule validationModule;
         private DevExpress.ExpressApp.Validation.Win.ValidationWindowsFormsModule validationWindowsFormsModule;
-        private Xpand.ExpressApp.ImportWizard.ImportWizardModule importWizardModule1;
-        private Xpand.ExpressApp.ImportWizard.Win.ImportWizardWindowsFormsModule importWizardWindowsFormsModule1;
+        private DevExpress.ExpressApp.Scheduler.SchedulerModuleBase schedulerModule;
+        private DevExpress.ExpressApp.Scheduler.Win.SchedulerWindowsFormsModule schedulerWindowsFormsModule;
+        private DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule viewVariantsModule;
     }
 }

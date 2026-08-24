@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Linq;
 using DevExpress.Xpo;
-using System.Collections.Generic;
-using Xpand.Persistent.Base.General.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
 using Landrys_Loop_Checkout_System.Module.BusinessObjects.Db151516LoopCheckout;
 
 namespace Landrys_Loop_Checkout_System.Module.BusinessObjects
 {
-    [CloneView(CloneViewType.ListView, "LoopCheck_ListView_Calendar")]
     [MapInheritance(MapInheritanceType.ParentTable)]
     [RuleCombinationOfPropertiesIsUnique(DefaultContexts.Save,"Schedule,Item")]
     public class LoopCheck : Event
