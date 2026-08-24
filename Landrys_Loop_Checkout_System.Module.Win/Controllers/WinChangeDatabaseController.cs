@@ -26,6 +26,11 @@ namespace Landrys_Loop_Checkout_System.Module.Win.Controllers
         WinApplication CreateApplication();
     }
 
+    public interface IJobFileSwitcher
+    {
+        bool SwitchJobFile(string filePath);
+    }
+
     // For more typical usage scenarios, be sure to check out https://documentation.devexpress.com/eXpressAppFramework/clsDevExpressExpressAppWindowControllertopic.aspx.
     public partial class WinChangeDatabaseController : WindowController
     {
@@ -63,26 +68,27 @@ namespace Landrys_Loop_Checkout_System.Module.Win.Controllers
             };
             if (fld.ShowDialog()==DialogResult.OK)
             {
-                string fileName = fld.FileName;
-                WinChangeDatabaseHelper.DataFilePath = fileName;
-                Frame.GetController<LogoffController>().LogoffAction.DoExecute();
+                OpenJobFile(fld.FileName);
             }
-            
-            
         }
         private void OpenJobAction_Execute(object sender, SimpleActionExecuteEventArgs e)
         {
             OpenFileDialog fld = new OpenFileDialog() { Filter = JobDatabase.FileFilter, RestoreDirectory = true };
             if (fld.ShowDialog() == DialogResult.OK)
             {
-                string fileName = fld.FileName;
-                WinChangeDatabaseHelper.DataFilePath = fileName;
-                //WinChangeDatabaseHelper.SkipLogonDialog = true;
-                //WinChangeDatabaseStandardAuthentication.AuthenticatedUserName = SecuritySystem.CurrentUserName;
-                Frame.GetController<LogoffController>().LogoffAction.DoExecute();
-                
-                //((IDataFilePathParameter)SecuritySystem.LogonParameters).DataFilePath = WinChangeDatabaseHelper.DataFilePath;
+                OpenJobFile(fld.FileName);
             }
+        }
+        private void OpenJobFile(string fileName)
+        {
+            if (Application is IJobFileSwitcher switcher)
+            {
+                switcher.SwitchJobFile(fileName);
+                return;
+            }
+
+            WinChangeDatabaseHelper.DataFilePath = fileName;
+            Frame.GetController<LogoffController>().LogoffAction.DoExecute();
         }
         void Application_LoggedOff(object sender, EventArgs e)
         {

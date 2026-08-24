@@ -8,6 +8,7 @@ namespace Landrys_Loop_Checkout_System.Module.Win
     public class WinChangeDatabaseHelper
     {
         public static string DataFilePath;
+        public static string CurrentDataFilePath;
         public static bool AuthenticatedUserLogonFailed = false;
     }
 
