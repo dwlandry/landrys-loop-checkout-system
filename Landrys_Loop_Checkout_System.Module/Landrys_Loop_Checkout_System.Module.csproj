@@ -5,11 +5,8 @@
     <AssemblyName>Landrys_Loop_Checkout_System.Module</AssemblyName>
     <Deterministic>false</Deterministic>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <Configurations>Debug;Release;EasyTest</Configurations>
+    <Configurations>Debug;Release</Configurations>
     <CheckEolTargetFramework>false</CheckEolTargetFramework>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)' == 'EasyTest'">
-    <DefineConstants>$(DefineConstants);EASYTEST</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="**\*.bak" />
