@@ -26,6 +26,7 @@ namespace Landrys_Loop_Checkout_System.Win
                 if (!string.IsNullOrEmpty(fileParameter.DataFilePath))
                 {
                     WinChangeDatabaseHelper.CurrentDataFilePath = fileParameter.DataFilePath;
+                    RecentJobFiles.Add(fileParameter.DataFilePath);
                 }
             }
         }
@@ -49,19 +50,19 @@ namespace Landrys_Loop_Checkout_System.Win
 
             string[] arguments = Environment.GetCommandLineArgs();
             string jobFilePath = FindJobFileArgument(arguments);
-            if (!string.IsNullOrEmpty(jobFilePath))
+            if (string.IsNullOrEmpty(jobFilePath))
             {
-                winApplication.ConnectionString = JobDatabase.GetConnectionString(jobFilePath);
-                winApplication.Title = Path.GetFileName(jobFilePath);
-                WinChangeDatabaseHelper.CurrentDataFilePath = jobFilePath;
+                jobFilePath = RecentJobFiles.FindLastExisting();
             }
-            else
+            if (string.IsNullOrEmpty(jobFilePath))
             {
-                string defaultJob = JobDatabase.DefaultJobFilePath;
-                winApplication.ConnectionString = JobDatabase.GetConnectionString(defaultJob);
-                winApplication.Title = Path.GetFileName(defaultJob);
-                WinChangeDatabaseHelper.CurrentDataFilePath = defaultJob;
+                jobFilePath = JobDatabase.DefaultJobFilePath;
             }
+
+            winApplication.ConnectionString = JobDatabase.GetConnectionString(jobFilePath);
+            winApplication.Title = Path.GetFileName(jobFilePath);
+            WinChangeDatabaseHelper.CurrentDataFilePath = jobFilePath;
+            RecentJobFiles.Add(jobFilePath);
             return winApplication;
         }
 
@@ -75,6 +76,7 @@ namespace Landrys_Loop_Checkout_System.Win
             string fullPath = Path.GetFullPath(filePath);
             if (SameJobPath(fullPath, WinChangeDatabaseHelper.CurrentDataFilePath))
             {
+                RecentJobFiles.Add(fullPath);
                 return true;
             }
 
@@ -178,6 +180,7 @@ namespace Landrys_Loop_Checkout_System.Win
             isLoggedOn = false;
             Logon();
             WinChangeDatabaseHelper.CurrentDataFilePath = filePath;
+            RecentJobFiles.Add(filePath);
         }
 
         private bool CloseOpenJobWindows()

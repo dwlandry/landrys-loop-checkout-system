@@ -20,7 +20,7 @@ namespace Landrys_Loop_Checkout_System.Module.Win
             CustomCreateUser += OnCustomCreateUser;
         }
 
-        public override bool IsLogoffEnabled => true;
+        public override bool IsLogoffEnabled => false;
         public override bool AskLogonParametersViaUI => false;
 
         public override object Authenticate(DevExpress.ExpressApp.IObjectSpace objectSpace)
